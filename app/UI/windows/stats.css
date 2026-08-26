@@ -1,0 +1,190 @@
+/* ================================
+   Stats Section
+================================ */
+
+#stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.stats-header {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.stats-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.stats-title .eyebrow {
+    color: var(--primary-2);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+}
+
+.stats-title h1 {
+    color: var(--text);
+    font-size: 1.7rem;
+}
+
+.stats-title p {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.stats-period-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 0.9rem;
+    background: var(--surface-2);
+}
+
+/* Content Container */
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Summary Grid Cards */
+.stats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.stat-summary-card {
+    padding: 1.2rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-summary-card:hover {
+    border-color: var(--border-2);
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 1.2rem rgba(22, 40, 78, 0.04);
+}
+
+.stat-summary-card .summary-label {
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.stat-summary-card .summary-value {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.summary-trend {
+    font-size: 0.65rem;
+    color: var(--muted);
+}
+
+.summary-trend.positive {
+    color: var(--green);
+    font-weight: 600;
+}
+
+/* Section Containers */
+.stats-section {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: border-color 0.2s ease;
+}
+
+.stats-section:hover {
+    border-color: var(--border-2);
+}
+
+.stats-section .section-header {
+    border-bottom: 0.05rem solid var(--border);
+    padding-bottom: 0.75rem;
+}
+
+.stats-section .section-header h2 {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Skill Progress Bars */
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+.skill-name {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.skill-score {
+    color: var(--muted);
+}
+
+.bar-bg {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 1rem;
+    background: var(--surface-2);
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 1rem;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Handling */
+@media (max-width: 850px) {
+    .stats-header {
+        flex-direction: column;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

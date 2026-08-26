@@ -1,0 +1,190 @@
+/* ================================
+   Settings Section
+================================ */
+
+#settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.settings-header {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.settings-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.settings-title .eyebrow {
+    color: var(--primary-2);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+}
+
+.settings-title h1 {
+    color: var(--text);
+    font-size: 1.7rem;
+}
+
+.settings-title p {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* Content & Cards */
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.setting-card {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.setting-card:hover {
+    border-color: var(--border-2);
+    box-shadow: 0 0.4rem 1.2rem rgba(22, 40, 78, 0.04);
+}
+
+.setting-card-header {
+    border-bottom: 0.05rem solid var(--border);
+    padding-bottom: 0.75rem;
+}
+
+.setting-card-header h2 {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Option Layout */
+.setting-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.setting-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
+}
+
+.setting-info h3 {
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.setting-info p {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.45;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Controls & UI Elements */
+.setting-control {
+    flex-shrink: 0;
+}
+
+/* Custom Select Dropdown */
+.settings-select {
+    padding: 0.5rem 0.8rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 0.8rem;
+    background: var(--surface-2);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    outline: none;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+
+.settings-select:hover, 
+.settings-select:focus {
+    border-color: var(--primary-2);
+    background: var(--surface);
+}
+
+/* Segmented Toggle Control (Matching Filter Style) */
+.theme-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 0.9rem;
+    background: var(--surface-2);
+}
+
+.theme-btn {
+    padding: 0.45rem 0.85rem;
+    border: 0;
+    border-radius: 0.65rem;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+
+.theme-btn:hover {
+    color: var(--primary-2);
+}
+
+.theme-btn.active {
+    background: var(--surface);
+    color: var(--primary-2);
+    box-shadow: 0 0.1rem 0.3rem rgba(22, 40, 78, 0.06);
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+    .setting-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .setting-control {
+        width: 100%;
+    }
+
+    .settings-select,
+    .theme-toggle-group {
+        width: 100%;
+    }
+
+    .theme-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
