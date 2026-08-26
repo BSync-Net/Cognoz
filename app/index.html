@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="UI/windows/dashboard.css">
+    <link rel="stylesheet" href="UI/windows/games.css">
+    <link rel="stylesheet" href="UI/windows/stats.css">
+    <link rel="stylesheet" href="UI/windows/settings.css">
+</head>
+
+<body>
+    <main id="app">
+        <!-- <iframe src="dabba/index.html" width="800" height="600"></iframe> -->
+         <aside id="sidebar" class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo large">
+            <img src="assets/logo_small.jpg" alt="Logo" class="logo small">
+            <nav>
+                <a class="nav-item" data-option="dashboard" href="#">
+                    <img src="assets/icon_dashboard.png" alt="Dashboard" class="nav-icon">
+                    <span class="nav-item name">Dashboard</span>
+                </a>
+                <a class="nav-item" data-option="games" href="#">
+                    <img src="assets/icon_games.png" alt="Games" class="nav-icon">
+                    <span class="nav-item name">Games</span>
+                </a>
+                <a class="nav-item" data-option="stats" href="#">
+                    <img src="assets/icon_stats.png" alt="Stats" class="nav-icon">
+                    <span class="nav-item name">Stats</span>
+                </a>
+                <a class="nav-item" data-option="settings" href="#">
+                    <img src="assets/icon_settings.png" alt="Settings" class="nav-icon">
+                    <span class="nav-item name">Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <section id="container">
+            <div id="welcome-panel" class="content">
+                <h1>Welcome to the Cognoz</h1>
+                <p>Let us guide your mind with our games.</p>
+                <button id="start-btn">Get Started</button>
+            </div>
+        </section>
+    </main>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
