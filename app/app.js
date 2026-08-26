@@ -8,7 +8,7 @@ const welcomePanel = document.getElementById('welcome-panel');
 
 const sideNavItems = document.querySelectorAll('.sidebar nav a');
 
-setNavEnabled(sideNavItems, true);
+setNavEnabled(sideNavItems, false);
 
 startBtn.addEventListener('click', () => {
     setTimeout(() => {
