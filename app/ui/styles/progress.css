@@ -1,0 +1,446 @@
+/* ================================
+   progress Section
+================================ */
+
+#progress {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    overflow-y: auto;
+    font-family: var(--font-main);
+    padding: 0.5rem;
+}
+
+/* ================================
+   Header
+================================ */
+
+.progress-header {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.progress-title {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+}
+
+.progress-title .eyebrow {
+    color: var(--primary-dark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: .08rem;
+    text-transform: uppercase;
+}
+
+.progress-title h1 {
+    color: var(--text);
+    font-size: var(--text-xl);
+    font-weight: 700;
+}
+
+.progress-title p {
+    text-align: left;
+    color: var(--text-light);
+    font-size: var(--text-md);
+    line-height: 1.6;
+}
+
+.progress-period-filter {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+}
+
+.progress-period-filter button {
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: var(--radius-small);
+    background: transparent;
+    color: var(--muted);
+    font-size: var(--text-sm);
+    transition: var(--transition);
+}
+
+.progress-period-filter button:hover,
+.progress-period-filter button.active {
+
+    background: var(--primary-light);
+
+    color: var(--primary-dark);
+
+}
+
+/* ================================
+   Content Container
+================================ */
+
+.progress-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+
+/* ================================
+   Summary Cards
+================================ */
+
+.progress-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.stat-summary-card {
+    padding: 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    box-shadow: var(--shadow-small);
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.stat-summary-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: var(--shadow-medium);
+}
+
+.stat-summary-card .summary-label {
+    color: var(--muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.stat-summary-card .summary-value {
+    color: var(--text);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.summary-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: var(--text-sm);
+    color: var(--muted);
+}
+
+.summary-trend.positive {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.summary-trend.negative {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+/* ================================
+   progress Sections
+================================ */
+
+.progress-section {
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-small);
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.progress-section:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* ================================
+   Section Header
+================================ */
+
+.progress-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-section .section-header h2 {
+    color: var(--text);
+    font-size: var(--text-lg);
+    font-weight: 700;
+}
+
+
+/* ================================
+   Skill Bars
+================================ */
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    color: var(--text);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.skill-score {
+    color: var(--primary-dark);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+
+/* ================================
+   Progress Bars
+================================ */
+
+.bar-bg {
+    width: 100%;
+    height: .8rem;
+    background: var(--surface-2);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    transition: width .5s ease;
+}
+
+/* Optional color variants */
+
+.bar-fill.memory {
+    background: var(--primary);
+}
+
+.bar-fill.attention {
+    background: var(--secondary);
+}
+
+.bar-fill.logic {
+    background: var(--accent);
+}
+
+.bar-fill.language {
+    background: var(--warning);
+}
+
+.bar-fill.speed {
+    background: var(--success);
+}
+
+.bar-fill.reaction {
+    background: var(--danger);
+}
+
+
+/* ================================
+   progress Table (Future Ready)
+================================ */
+
+.progress-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.progress-table th {
+    text-align: left;
+    padding-bottom: 1rem;
+    color: var(--text-light);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.progress-table td {
+    padding: .9rem 0;
+    border-top: 1px solid var(--border);
+    font-size: var(--text-sm);
+    color: var(--text);
+}
+
+
+/* ================================
+   Empty State
+================================ */
+
+.progress-empty {
+    padding: 3rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: var(--text-md);
+}
+
+/* ================================
+   Responsive Handling
+================================ */
+
+@media (max-width: 1024px) {
+
+    .progress-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .progress-section {
+        padding: 1.75rem;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .progress-title h1 {
+        font-size: var(--text-lg);
+    }
+
+    .progress-title p {
+        font-size: var(--text-sm);
+    }
+
+    .progress-period-filter {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .progress-period-filter button {
+        flex: 1;
+        min-width: 110px;
+    }
+
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-section {
+        padding: 1.5rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #progress {
+        gap: 1.25rem;
+    }
+
+    .progress-header {
+        padding: .5rem 0;
+    }
+
+    .progress-title .eyebrow {
+        font-size: var(--text-xs);
+    }
+
+    .progress-title h1 {
+        font-size: 1.9rem;
+    }
+
+    .progress-title p {
+        font-size: var(--text-sm);
+    }
+
+    .stat-summary-card {
+        padding: 1.25rem;
+    }
+
+    .summary-value {
+        font-size: var(--text-lg);
+    }
+
+    .progress-section {
+        padding: 1.25rem;
+    }
+
+    .progress-section .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+
+    .skill-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .35rem;
+    }
+
+    .bar-bg {
+        height: .7rem;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .progress-period-filter {
+        gap: .35rem;
+    }
+
+    .progress-period-filter button {
+        width: 100%;
+    }
+
+    .stat-summary-card {
+        text-align: center;
+    }
+
+    .summary-trend {
+        justify-content: center;
+    }
+
+}

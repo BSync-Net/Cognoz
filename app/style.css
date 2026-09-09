@@ -1,5 +1,935 @@
+:root {
+
+    /* ==============================
+       Backgrounds
+    ============================== */
+
+    --bg: #F6F0E6;
+    --surface: #FFFDF9;
+    --surface-2: #F1E9DD;
+
+    /* ==============================
+       Text
+    ============================== */
+
+    --text: #3A342E;
+    --text-light: #5E554C;
+    --muted: #756C63;
+
+    /* ==============================
+       Borders
+    ============================== */
+
+    --border: #DDD2C3;
+    --border-active: #B89A74;
+
+    /* ==============================
+       Primary
+    ============================== */
+
+    --primary: #8A6F4D;
+    --primary-dark: #6E573C;
+    --primary-light: #EDE1D1;
+
+    /* ==============================
+       Secondary
+    ============================== */
+
+    --secondary: #83A970;
+    --secondary-light: #E9F2E4;
+
+    /* ==============================
+       Accent
+    ============================== */
+
+    --accent: #E6BE63;
+    --accent-light: #FFF4D6;
+
+    /* ==============================
+       Success
+    ============================== */
+
+    --success: #78A96E;
+    --success-light: #EAF4E7;
+
+    /* ==============================
+       Warning
+    ============================== */
+
+    --warning: #D5A35A;
+    --warning-light: #FFF0D5;
+
+    /* ==============================
+       Error
+    ============================== */
+
+    --danger: #C97B73;
+    --danger-light: #FBEAE8;
+
+    /* ==============================
+       Shadows
+    ============================== */
+
+    --shadow-small: 0 4px 12px rgba(72, 58, 43, 0.07);
+    --shadow-medium: 0 10px 24px rgba(72, 58, 43, 0.11);
+
+    /* ==============================
+       Border Radius
+    ============================== */
+
+    --radius-small: 14px;
+    --radius: 20px;
+    --radius-large: 28px;
+
+    /* ==============================
+       Typography
+    ============================== */
+
+    --font-main: Arial, Helvetica, sans-serif;
+
+    --text-xs: 0.95rem;
+    --text-sm: 1.05rem;
+    --text-md: 1.25rem;
+    --text-lg: 1.75rem;
+    --text-xl: 2.25rem;
+
+    /* ==============================
+       Buttons
+    ============================== */
+
+    --button-height: 60px;
+    --button-radius: 18px;
+
+    /* ==============================
+       Animation
+    ============================== */
+
+    --transition: 0.2s ease;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-main);
+    background: var(--bg);
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #FBF8F3 0%,
+        var(--bg) 100%
+    );
+    color: var(--text);
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    min-height: var(--button-height);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+svg-icon {
+    color: var(--primary);
+}
+
+/* ==============================
+   App Layout
+============================== */
+
+#app {
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* ==============================
+   Sidebar
+============================== */
+
+#app .sidebar {
+    width: 26%;
+    max-width: 16rem;
+    height: 100%;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background: var(--surface);
+    box-shadow: var(--shadow-small);
+    display: flex;
+    flex-direction: column;
+}
+
+#app .sidebar .logo {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    filter: hue-rotate(108deg)
+            saturate(56%)
+            brightness(64%);
+}
+
+#app .sidebar .logo.small {
+    display: none;
+}
+
+#app .sidebar nav {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+nav .nav-item {
+    width: 100%;
+    min-height: 3.4rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav .nav-item.active {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    box-shadow: inset 0 0 0 1px rgba(138, 111, 77, 0.08);
+}
+
+nav .nav-item:hover {
+    color: var(--primary-dark);
+    background: #F4EBDD;
+}
+
+nav .nav-item:focus-visible {
+    outline: 3px solid var(--border-active);
+    outline-offset: 3px;
+}
+
+nav .nav-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* ==============================
+   Main Container
+============================== */
+
+#container {
+    width: 74%;
+    height: 100%;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+    background: linear-gradient(
+        180deg,
+        var(--surface) 0%,
+        #FBF6EF 100%
+    );
+    box-shadow: var(--shadow-small);
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+    /*scrollbar-width: thin;
+    scrollbar-color: var(--border-active) transparent;*/
+}
+
+#container .content {
+    flex: 1;
+}
+
+/* ==============================
+   Welcome Panel
+============================== */
+
+#welcome-panel {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--radius-large);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+#welcome-panel h1,
+#welcome-panel p {
+    width: 100%;
+    max-width: 42rem;
+    text-align: center;
+}
+
+#welcome-panel h1 {
+    color: var(--primary-dark);
+    font-family: var(--font-main);
+    font-size: var(--text-xl);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+#welcome-panel p {
+    color: var(--text-light);
+    font-family: var(--font-main);
+    font-size: var(--text-md);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+#welcome-panel button {
+    width: auto;
+    min-width: 12rem;
+    max-width: none;
+    height: var(--button-height);
+    margin-top: 0.5rem;
+    padding: 0.9rem 1.75rem;
+    border: none;
+    border-radius: var(--button-radius);
+    background: var(--primary);
+    color: var(--surface);
+    box-shadow: var(--shadow-small);
+    font-family: var(--font-main);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+#welcome-panel button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+#welcome-panel button:focus-visible {
+    outline: 3px solid var(--border-active);
+    outline-offset: 4px;
+}
+
+/* ==============================
+   App Windows
+============================== */
+
+.window {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: inherit;
+}
+
+/* ==============================
+   General Reusable Accessibility
+============================== */
+
+h1,
+h2,
+h3,
+p,
+span,
+button,
+a {
+    font-family: var(--font-main);
+}
+
+p {
+    line-height: 1.6;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--border-active);
+    outline-offset: 3px;
+}
+
+/* ==============================
+   Tablet
+============================== */
+
+@media (max-width: 900px) {
+
+    #app {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #app .sidebar {
+        width: 22%;
+        min-width: 5.5rem;
+        padding: 1rem 0.7rem;
+    }
+
+    #app .sidebar .logo {
+        max-width: 3.5rem;
+        margin-inline: auto;
+    }
+
+    #app .sidebar .logo.small {
+        display: block;
+    }
+
+    #app .sidebar .logo.large {
+        display: none;
+    }
+
+    #app .sidebar nav {
+        gap: 1rem;
+    }
+
+    #app .sidebar .nav-item {
+        justify-content: center;
+        padding: 0.85rem;
+    }
+
+    #app .sidebar .nav-item .name {
+        display: none;
+    }
+
+    .nav-item .nav-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #container {
+        width: 78%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .window {
+        padding: 1rem;
+    }
+}
+
+/* ==============================
+   Mobile
+============================== */
+
+@media (max-width: 520px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    #app {
+        height: 100vh;
+        padding: 0.5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    #app .sidebar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        padding: 0.55rem 0.8rem;
+        border-radius: var(--radius);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #app .sidebar .logo {
+        width: auto;
+        height: 2.4rem;
+        margin-top: 0;
+    }
+
+    #app .sidebar .logo.large {
+        display: none;
+    }
+
+    #app .sidebar .logo.small {
+        display: block;
+    }
+
+    #app .sidebar nav {
+        margin-top: 0;
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+
+    nav .nav-item {
+        width: auto;
+        min-height: 3rem;
+        min-width: 3rem;
+        padding: 0.55rem;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    #app .sidebar .nav-item .name {
+        display: none;
+    }
+
+    .nav-item .nav-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-right: 0;
+    }
+
+    #container {
+        width: 100%;
+        height: calc(100vh - 4.5rem);
+        border-radius: var(--radius);
+        padding: 0.5rem;
+    }
+
+    .window {
+        padding: 0.75rem;
+    }
+
+    #welcome-panel {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #welcome-panel h1 {
+        font-size: 1.8rem;
+    }
+
+    #welcome-panel p {
+        font-size: 1.05rem;
+    }
+
+    #welcome-panel button {
+        width: 100%;
+        min-width: 0;
+        max-width: 20rem;
+    }
+}
+
+/* =========================================================
+   COGNOZ DARK MODE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   DARK THEME VARIABLES
+   --------------------------------------------------------- */
+
+html[data-theme="dark"] {
+
+    /* Backgrounds */
+    --bg: #101318;
+    --surface: #181C23;
+    --surface-2: #222832;
+
+    /* Text */
+    --text: #F5F7FA;
+    --text-light: #D7DCE3;
+    --muted: #A6AFBA;
+
+    /* Borders */
+    --border: #353D48;
+    --border-active: #6EA8E5;
+
+    /* Primary */
+    --primary: #6EA8E5;
+    --primary-dark: #8BBBEA;
+    --primary-light: #24364B;
+
+    /* Secondary */
+    --secondary: #83C5A4;
+    --secondary-light: #20342A;
+
+    /* Accent */
+    --accent: #E7B95E;
+    --accent-light: #39301D;
+
+    /* Success */
+    --success: #82C596;
+    --success-light: #203329;
+
+    /* Warning */
+    --warning: #E2B45D;
+    --warning-light: #382F1E;
+
+    /* Danger */
+    --danger: #E18484;
+    --danger-light: #382528;
+
+    /* Shadows */
+    --shadow-small:
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    --shadow-medium:
+        0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   GLOBAL BACKGROUND
+   ========================================================= */
+
+html[data-theme="dark"] {
+    background: #101318 !important;
+    background-image: none !important;
+}
+
+html[data-theme="dark"] body {
+    background: #101318 !important;
+    background-image: none !important;
+    color: var(--text);
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+html[data-theme="dark"] #app {
+    background: #101318 !important;
+    background-image: none !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+html[data-theme="dark"] #app .sidebar {
+    background: #15191F !important;
+    background-image: none !important;
+
+    border-color: #353D48;
+    box-shadow: var(--shadow-small);
+}
+
+html[data-theme="dark"] #app .sidebar .logo{
+    filter: initial;
+}
+
+/* Sidebar navigation */
+
+html[data-theme="dark"] nav .nav-item {
+    color: #D7DCE3;
+}
+
+
+/* Active navigation item */
+
+html[data-theme="dark"] nav .nav-item.active {
+    background: #28313C !important;
+    color: #FFFFFF !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(110, 168, 229, 0.12);
+}
+
+
+/* Navigation hover */
+
+html[data-theme="dark"] nav .nav-item:hover {
+    background: #222932 !important;
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+html[data-theme="dark"] #container {
+    background: #181C23 !important;
+    background-image: none !important;
+
+    border-color: #353D48;
+    box-shadow: var(--shadow-small);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+html[data-theme="dark"] #container .content {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+html[data-theme="dark"] #settings {
+    background: transparent !important;
+}
+
+
+/* Settings cards */
+
+html[data-theme="dark"] .setting-card {
+    background: #20252E !important;
+    background-image: none !important;
+
+    border-color: #353D48;
+}
+
+
+/* Settings card header */
+
+html[data-theme="dark"] .setting-card-header {
+    border-color: #353D48;
+}
+
+
+/* Settings headings */
+
+html[data-theme="dark"] .settings-title h1,
+html[data-theme="dark"] .setting-card-header h2,
+html[data-theme="dark"] .setting-info h3 {
+    color: #F5F7FA;
+}
+
+
+/* Settings description */
+
+html[data-theme="dark"] .settings-title p,
+html[data-theme="dark"] .setting-info p {
+    color: #A6AFBA;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+html[data-theme="dark"] .settings-select {
+    background: #252B34 !important;
+    color: #F5F7FA !important;
+    border-color: #3A424D;
+}
+
+
+html[data-theme="dark"] .settings-select:hover,
+html[data-theme="dark"] .settings-select:focus {
+    background: #2B323C !important;
+    border-color: #6EA8E5;
+}
+
+
+/* Dropdown options */
+
+html[data-theme="dark"] .settings-select option {
+    background: #20252E;
+    color: #F5F7FA;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+html[data-theme="dark"] .theme-toggle-group {
+    background: #20252E !important;
+    border-color: #3A424D;
+}
+
+
+/* Normal button */
+
+html[data-theme="dark"] .theme-btn {
+    background: transparent;
+    color: #A6AFBA;
+}
+
+
+/* Hover */
+
+html[data-theme="dark"] .theme-btn:hover {
+    background: #2A313B;
+    color: #F5F7FA;
+}
+
+
+/* Active */
+
+html[data-theme="dark"] .theme-btn.active {
+    background: #101318 !important;
+    color: #FFFFFF !important;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   GAMES
+   ========================================================= */
+
+html[data-theme="dark"] #games {
+    background: transparent !important;
+}
+
+
+/* Game cards */
+
+html[data-theme="dark"] .games-summary,
+html[data-theme="dark"] .featured-game,
+html[data-theme="dark"] .game-card {
+    background: #20252E !important;
+    background-image: none !important;
+
+    border-color: #353D48;
+}
+
+
+/* Game icon */
+
+html[data-theme="dark"] .featured-icon,
+html[data-theme="dark"] .game-card-icon {
+    background: #293342 !important;
+}
+
+
+/* Game filter */
+
+html[data-theme="dark"] .game-filters {
+    background: #20252E !important;
+    border-color: #353D48;
+}
+
+
+/* Game filter buttons */
+
+html[data-theme="dark"] .game-filter {
+    color: #A6AFBA;
+}
+
+
+html[data-theme="dark"] .game-filter:hover,
+html[data-theme="dark"] .game-filter.active {
+    background: #24364B;
+    color: #8BBBEA;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+html[data-theme="dark"] #progress {
+    background: transparent !important;
+}
+
+
+html[data-theme="dark"] .stat-summary-card,
+html[data-theme="dark"] .progress-section {
+    background: #20252E !important;
+    background-image: none !important;
+
+    border-color: #353D48;
+}
+
+
+/* Progress section divider */
+
+html[data-theme="dark"] .progress-section .section-header {
+    border-color: #353D48;
+}
+
+
+/* Progress bars */
+
+html[data-theme="dark"] .bar-bg {
+    background: #303742;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+    color: var(--text);
+}
+
+
+html[data-theme="dark"] p {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+html[data-theme="dark"] a {
+    color: #8BBBEA;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+html[data-theme="dark"] #container::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+html[data-theme="dark"] #container::-webkit-scrollbar-track {
+    background: #101318;
+}
+
+
+html[data-theme="dark"] #container::-webkit-scrollbar-thumb {
+    background: #353D48;
+    border-radius: 10px;
+}
+
+
+html[data-theme="dark"] #container::-webkit-scrollbar-thumb:hover {
+    background: #4A5563;
+}
+
+
+/* =========================================================
+   FOCUS
+   Important for older users
+   ========================================================= */
+
+html[data-theme="dark"] button:focus-visible,
+html[data-theme="dark"] select:focus-visible,
+html[data-theme="dark"] input:focus-visible {
+    outline: 3px solid #6EA8E5;
+    outline-offset: 3px;
 }

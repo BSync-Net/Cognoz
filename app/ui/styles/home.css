@@ -1,0 +1,514 @@
+/**================
+ * Home
+ ================*/
+
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+/* ================================
+   Home Greeting
+================================ */
+
+#home .greeting {
+    width: 100%;
+    padding: 2rem;
+    border: 0.05rem solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--surface);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#home .greeting:hover {
+    border-color: var(--border-active);
+    box-shadow: 0 0.4rem 1.2rem rgba(22, 40, 78, 0.04);
+}
+
+
+/* Greeting content */
+
+#home .greeting-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+#home .greeting-content .eyebrow {
+    color: var(--primary-dark);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+}
+
+#home .greeting-content h1 {
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin: 0;
+}
+
+#home .greeting-content p {
+    margin: 0;
+
+    text-align: left;
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--text-md);
+}
+
+/* ================================
+   New Game Button
+================================ */
+
+#home .greeting .play-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-width: 7rem;
+
+    padding: 0.7rem 1.25rem;
+
+    border: 0;
+    border-radius: 0.75rem;
+
+    background: var(--primary);
+    color: var(--surface);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#home .greeting .play-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0.4rem 1rem rgba(22, 40, 78, 0.15);
+}
+
+#home .greeting .play-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#home .greeting .play-btn span {
+    display: inline-block;
+}
+
+
+/* ================================
+   Hero Button Override
+================================ */
+
+#home .greeting .hero-play-btn {
+    width: auto;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 650px) {
+
+    #home .greeting .hero-play-btn {
+        width: 100%;
+    }
+
+}
+
+#home .greeting .hero-play-btn {
+    width: auto;
+    margin-top: 0;
+    padding: 0.65rem 1.25rem;
+
+    flex-shrink: 0;
+
+    font-size: 0.75rem;
+}
+
+
+/* ================================
+   Stats Overview
+================================ */
+
+#home .stats-overview {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    gap: 1rem;
+
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+/* ================================
+   Stat Cards
+================================ */
+
+#home .stats-overview .card {
+    width: 30%;
+    max-width: 15rem;
+    min-width: 10rem;
+    height: auto;
+
+    padding: 1.4rem;
+
+    border: 0.05rem solid var(--border);
+    border-radius: var(--radius-large);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background: var(--surface);
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#home .stats-overview .card:hover {
+    cursor: pointer;
+
+    border-color: var(--border-active);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* Card label */
+
+#home .stats-overview .card .label {
+    margin-bottom: 1rem;
+
+    font-size: var(--text-lg);
+}
+
+
+/* Card data */
+
+#home .stats-overview .card .data {
+    font-size: var(--text-sm);
+}
+
+
+/* ================================
+   Game History
+================================ */
+
+#home .history {
+    width: 100%;
+    min-height: 15rem;
+
+    padding: 1rem;
+    margin: 1rem 0;
+
+    border: 0.05rem solid var(--border);
+    border-radius: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background: var(--surface);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#home .history:hover {
+    border-color: var(--border-active);
+    transform: scale(1.01);
+}
+
+
+/* ================================
+   History Header
+================================ */
+
+#home .history .header {
+    width: 100%;
+    height: auto;
+
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+}
+
+
+/* History title */
+
+#home .history .header .label {
+    flex: 1;
+    min-width: 170px;
+
+    color: var(--primary-dark);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* ================================
+   History Controls
+================================ */
+
+#home .history-controls {
+    flex: 1;
+    min-width: 250px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+}
+
+
+/* ================================
+   Date Sort Button
+================================ */
+
+#home .sort-date {
+    display: flex;
+    align-items: center;
+
+    gap: 0.35rem;
+
+    padding: 0.45rem 0.7rem;
+
+    border: 0;
+    border-radius: 0.7rem;
+
+    background: transparent;
+
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.15s ease-in-out,
+        background 0.15s ease-in-out;
+}
+
+#home .sort-date:hover {
+    color: var(--primary-dark);
+    background: var(--surface-2);
+}
+
+
+/* Sort arrow */
+
+#home .sort-arrow {
+    color: var(--primary-dark);
+    font-size: var(--text-md);
+    font-weight: 600;
+}
+
+
+/* ================================
+   History Filter
+================================ */
+
+#home .history-filter {
+    display: flex;
+    align-items: center;
+
+    padding: 0.2rem;
+
+    border: 0.05rem solid var(--border);
+    border-radius: 0.8rem;
+
+    background: var(--surface-2);
+}
+
+
+/* Filter buttons */
+
+#home .filter-option {
+    padding: 0.45rem 0.7rem;
+
+    border: 0;
+    border-radius: 0.6rem;
+
+    background: transparent;
+
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.15s ease-in-out,
+        background 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+#home .filter-option:hover {
+    color: var(--primary-dark);
+}
+
+
+/* Active filter */
+
+#home .filter-option.active {
+    background: var(--surface);
+    color: var(--primary-dark);
+
+    box-shadow:
+        0 0.1rem 0.3rem rgba(22, 40, 78, 0.06);
+}
+
+
+/* ================================
+   History Log
+================================ */
+
+#home .history-log {
+    flex: 1;
+    min-height: 8rem;
+
+    border: 0.05rem solid var(--border);
+    border-radius: 1rem;
+
+    background: var(--surface-2);
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 650px) {
+
+    #home .greeting {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 1rem;
+    }
+
+
+    #home .greeting .hero-play-btn {
+        width: 100%;
+    }
+
+
+    #home .stats-overview {
+        justify-content: center;
+    }
+
+
+    #home .stats-overview .card {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    #home .history .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    #home .history .header .label {
+        min-width: 0;
+    }
+
+
+    #home .history-controls {
+        width: 100%;
+        min-width: 0;
+
+        justify-content: space-between;
+    }
+}
+
+
+/* ================================
+   Small Mobile
+================================ */
+
+@media (max-width: 420px) {
+
+    #home .greeting {
+        padding: 1.25rem;
+    }
+
+
+    #home .history {
+        padding: 0.75rem;
+        border-radius: 1.5rem;
+    }
+
+
+    #home .history-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    #home .sort-date {
+        justify-content: center;
+    }
+
+
+    #home .history-filter {
+        width: 100%;
+    }
+
+
+    #home .filter-option {
+        flex: 1;
+    }
+}

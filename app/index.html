@@ -1,14 +1,53 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./ui/styles/home.css">
+    <link rel="stylesheet" href="./ui/styles/games.css">
+    <link rel="stylesheet" href="./ui/styles/progress.css">
+    <link rel="stylesheet" href="./ui/styles/settings.css">
 </head>
-
 <body>
-    <main id="app"></main>
+    <main id="app">
+        <!-- <iframe src="dabba/index.html" width="800" height="600"></iframe> -->
+         <aside id="sidebar" class="sidebar">
+            <!--img src="assets/logo_light.png" alt="Logo" class="logo large light">
+            <img src="assets/logo_dark.png" alt="Logo" class="logo large dark">
+            <img src="assets/logo_small_light.png" alt="Logo" class="logo small light">
+            <img src="assets/logo_small_dark.png" alt="Logo" class="logo small dark"-->
+            <img src="assets/logo.png" alt="Logo" class="logo large">
+            <img src="assets/logo_small.png" alt="Logo" class="logo small">
+            <nav>
+                <a class="nav-item" data-option="home" href="#">
+                    <span data-icon="home" class="svg-icon"></span>
+                    <span class="nav-item name">Home</span>
+                </a>
+                <a class="nav-item" data-option="games" href="#">
+                    <span data-icon="games" class="svg-icon"></span>
+                    <span class="nav-item name">Games</span>
+                </a>
+                <a class="nav-item" data-option="progress" href="#">
+                    <span data-icon="progress" class="svg-icon"></span>
+                    <span class="nav-item name">Progress</span>
+                </a>
+                <a class="nav-item" data-option="settings" href="#">
+                    <span data-icon="settings" class="svg-icon"></span>
+                    <span class="nav-item name">Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <section id="container">
+            <div id="welcome-panel" class="content">
+                <h1>Welcome to the Cognoz</h1>
+                <p>Let us guide your mind with our games.</p>
+                <button id="start-btn">Get Started</button>
+            </div>
+        </section>
+    </main>
     <script src="app.js" type="module"></script>
 </body>
 
